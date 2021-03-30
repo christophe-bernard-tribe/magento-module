@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Ubista\Ubista\Block\Param" name="attribute.inlineTop" template="Ubista_Ubista::attribute.phtml" before="-">
+            <block class="Ubista\Ubista\Block\Param" name="attribute.inlineTop" template="Ubista_Ubista::attribute.phtml" before="-" cacheable="false">
                 <arguments>
                     <argument name="page" xsi:type="string">product_page</argument>
                     <argument name="position" xsi:type="string">top_content</argument>
@@ -13,7 +13,7 @@
 
         <referenceContainer name="content">
             <referenceContainer name="product.info.main">
-                <block class="Ubista\Ubista\Block\Param" name="attribute.inlineCart" template="Ubista_Ubista::attribute.phtml">
+                <block class="Ubista\Ubista\Block\Param" name="attribute.inlineCart" template="Ubista_Ubista::attribute.phtml" cacheable="false">
                     <arguments>
                         <argument name="page" xsi:type="string">under_cart</argument>
                         <argument name="position" xsi:type="string">under_cart</argument>
