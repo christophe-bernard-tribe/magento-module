@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ubista_Ubista::ubistamenu" title="Ubista Menu" translate="title" module="Ubista_Ubista" sortOrder="10" resource="Ubista_Ubista::ubistamenu" />
+        <add id="Ubista_Ubista::tribe" title="Tribe" translate="title" module="Ubista_Ubista" sortOrder="10" dependsOnModule="Ubista_Ubista" parent="Ubista_Ubista::ubistamenu" action="ubista/tribe" resource="Ubista_Ubista::tribe" />
+    </menu>
+</config>

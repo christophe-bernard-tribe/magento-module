@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- Format du nom de fichier : {NomModule_NomControlleur_ActionController} -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceBlock name="page.title">
+        <action method="setPageTitle">
+            <argument name="title" xsi:type="string">Tribe Test Menu</argument>
+        </action>
+    </referenceBlock>
+    <body>
+        <referenceContainer name="content">
+            <block class="Ubista\Ubista\Block\Param" name="helloworld_display" template="Ubista_Ubista::tribe.phtml" />
+        </referenceContainer>
+    </body>
+</page>

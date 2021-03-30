@@ -1,0 +1,63 @@
+<?php
+$newIconSvg = '<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    width="24px" height="24px" viewBox="0 0 274 274"
+    preserveAspectRatio="xMidYMid meet" style="display:inline !important;padding: 0 2px 0 0 !important;vertical-align: top !important;margin-right:0.5rem"> <g transform="translate(0.000000,274.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none">
+    <path fill="#030f3f" d="M1100 2625 c-194 -32 -381 -125 -582 -292 -230 -191 -375 -419 -429 -678 -19 -90 -25 -311 -10 -363 5 -20 41 26 246 320 132 188 289 415 349 503 61 88 136 186 168 217 104 103 267 183 490 239 160 40 160 40 118 50 -67 17 -262 19 -350 4z"/>
+    <path fill="#127e6e" d="M793 1571 c-54 -14 -97 -45 -128 -96 -93 -151 44 -348 214 -305 143 36 202 196 118 321 -41 60 -134 97 -204 80z"/>
+    <path fill="#920557" d="M1284 1556 c-92 -43 -140 -140 -115 -233 43 -163 234 -216 348 -97 84 87 84 208 -1 289 -69 67 -147 81 -232 41z"/>
+    <path fill="#e94c3e" d="M1863 1571 c-54 -14 -97 -45 -128 -96 -93 -151 44 -348 214 -305 143 36 202 196 118 321 -41 60 -134 97 -204 80z"/>
+    <path fill="#030f3f" d="M2554 1398 c-27 -34 -101 -133 -164 -219 -508 -692 -518 -704 -658 -794 -175 -112 -357 -160 -662 -173 l-155 -7 58 -23 c134 -51 205 -64 382 -69 250 -7 395 23 625 128 91 42 116 49 168 49 53 0 72 -6 147 -45 234 -124 263 -111 200 85 -32 99 -36 123 -33 189 4 80 5 81 92 242 113 210 141 399 88 594 -31 115 -31 115 -88 43z"/>
+    </g>
+    </svg>';
+$paramValue;
+
+// url = echo $this->getUrl("ubista/tribe/post");
+
+/**
+ * @var \Ubista\Ubista\Block\Display $block
+ */
+
+foreach ($block->getParamCollection() as $key => $item) {
+    if ($item['name'] === 'custom_param') {
+        $paramValue = $item;
+    }
+}
+
+?>
+<div class="clearfix">
+    <h2 class="legend">
+        <?php echo $newIconSvg; ?>
+        <?php echo __('Configure Ubista module'); ?>
+    </h2>
+    <div class="actions">
+        <form class="action-element" action="<?php
+        echo $this->getUrl("ubista/tribe/post");
+        ?>" method="post">
+            <fieldset class="fieldset">
+                <legend class="legend"><span><?php echo __('Settings') ?></span></legend><br>
+                <div class="form-group clearfix" id="doubleoptin-final-confirmation-area">
+                    <div style="float:left; display:flex;">
+                        <a aria-controls="doubleoptin-final-confirm" aria-expanded="false" data-toggle="collapse"
+                            href="#doubleoptin-final-confirm" style="color: #555;font-weight: bold;align-self:center;margin-right:10px">
+                            <?php echo __('Activate custom option in frontend '); ?>
+                        </a>
+                        <label class="switch">
+                            <input type="checkbox" name="checkboxValue"
+                              <?php
+                              if (isset($paramValue)) {
+                                echo ($paramValue['value'] == 1 ? 'checked' : '');
+                              }
+                              ?>
+                            >
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="page-actions-buttons">
+                    <input class="action-primary" style="display:inline" type="submit" title="Save Settings" name="submitFormSettings" value="<?php echo __('Save'); ?>">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

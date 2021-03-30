@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Ubista\Ubista\Block\Param" name="attribute.inlineTop" template="Ubista_Ubista::attribute.phtml" before="-">
+                <arguments>
+                    <argument name="page" xsi:type="string">product_page</argument>
+                    <argument name="position" xsi:type="string">top_content</argument>
+                    <argument name="type" xsi:type="string">inline</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.main">
+                <block class="Ubista\Ubista\Block\Param" name="attribute.inlineCart" template="Ubista_Ubista::attribute.phtml">
+                    <arguments>
+                        <argument name="page" xsi:type="string">under_cart</argument>
+                        <argument name="position" xsi:type="string">under_cart</argument>
+                        <argument name="type" xsi:type="string">inline</argument>
+                    </arguments>
+                </block>
+            </referenceContainer>
+        </referenceContainer>
+    </body>
+</page>
