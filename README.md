@@ -16,7 +16,7 @@
 **Adaptation du tutoriel en ligne :**
 [https://digitalstartup.co.uk/t/how-to-install-magento-2-4-and-build-a-web-server/1607](https://digitalstartup.co.uk/t/how-to-install-magento-2-4-and-build-a-web-server/1607)
 
-##<a id="_Toc68005382"></a>1. Configuration Système
+## <a id="_Toc68005382"></a>1. Configuration Système
 
 ### a.Installation/Configuration Firewall
 
@@ -165,7 +165,7 @@ Rechercher avec `Ctrl + W` :
 
 `sudo systemctl restart postfix`
 
-##<a id="_Toc68005383"></a>2. Installation/Configuration Elasticsearch
+## <a id="_Toc68005383"></a>2. Installation/Configuration Elasticsearch
 
 **Installation des packages Java :**
 
@@ -202,7 +202,7 @@ sudo /bin/systemctl daemon-reload
 
 `curl -X GET "localhost:9200/"`
 
-##<a id="_Toc68005384"></a>3. Installation Magento 2.4
+## <a id="_Toc68005384"></a>3. Installation Magento 2.4
 
 ### a.Création d’un utilisateur
 
@@ -298,7 +298,7 @@ Rechercher avec `Ctrl + W`
 
 `bin/magento cron:install`
 
-##<a id="_Toc68005385"></a>4. Test de l’installation
+## <a id="_Toc68005385"></a>4. Test de l’installation
 
 **Boutique :**
 
@@ -315,7 +315,7 @@ bin/magento module:disable Magento_TwoFactorAuth
 bin/magento cache:flush
 ```
 
-##<a id="_Toc68005386"></a>5. Changer de mode
+## <a id="_Toc68005386"></a>5. Changer de mode
 
 - Vérifier le mode actif : `bin/magento deploy:mode:show`
 
@@ -325,7 +325,7 @@ bin/magento cache:flush
 
 - Nettoyer le cache après chaque changement de mode : `bin/magento cache:clean`
 
-##<a id="_Toc68005387"></a>6. Installation d’un thème
+## <a id="_Toc68005387"></a>6. Installation d’un thème
 
 - Télécharger un thème (ex : [https://www.hiddentechies.com/bizkick-responsive-theme-magento-2.html](https://www.hiddentechies.com/bizkick-responsive-theme-magento-2.html))
 - Copier et extraire l’archive (dossiers `/app` et `/pub`) dans le dossier `<Magento root dir>/` :
@@ -344,7 +344,7 @@ bin/magento setup:static-content:deploy
 - Dans la section **Applied Theme**, choisir le thème dans la liste déroulante
 - Rafraîchir le cache
 
-##<a id="_Toc68005388"></a>7. Personnalisation d’un thème
+## <a id="_Toc68005388"></a>7. Personnalisation d’un thème
 
 - Structure d’un thème :
 
@@ -354,7 +354,7 @@ bin/magento setup:static-content:deploy
 
 [https://magecomp.com/blog/how-to-customize-themes-styles-in-magento/](https://magecomp.com/blog/how-to-customize-themes-styles-in-magento/)
 
-##<a id="_Toc68005389"></a>8. Afficher les indications de templates
+## <a id="_Toc68005389"></a>8. Afficher les indications de templates
 
 - Basculer en mode Developper
 - Exécuter les commandes :
@@ -366,7 +366,7 @@ bin/magento cache:clean config full_page
 
 - Ajouter le paramètre ?templatehints=magento dans l’url pour afficher les indications
 
-##<a id="_Toc68005310"></a>9. Ajouter une extension existante
+## <a id="_Toc68005310"></a>9. Ajouter une extension existante
 
 Le gestionnaire d’extension n’est plus disponible depuis la version 2.4 de Magento, toutes les extensions doivent être installées en ligne de commande.
 
@@ -422,7 +422,7 @@ On retrouve l’extension dans le panneau d’administration, onglet Content :
 
 ![image](https://user-images.githubusercontent.com/45293401/113010529-33240100-9179-11eb-94e1-79daaa99b4ba.png)
 
-##<a id="_Toc68005311"></a>10. Créer un module personnalisé
+## <a id="_Toc68005311"></a>10. Créer un module personnalisé
 
 Sources :
 
