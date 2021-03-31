@@ -2,21 +2,21 @@
 
 # Table des matières
 
-- [Configuration Système](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#1configuration-syst%C3%A8me)
-- [Elastic Search](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#2installationconfiguration-elasticsearch)
-- [Installation Magento](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#3installation-magento-24)
-- [Test de l'installation](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#4test-de-linstallation)
-- [Changement de mode](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#5changer-de-mode)
-- [Installation d'un thème](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#6installation-dun-th%C3%A8me)
-- [Personnalisation d'un thème](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#7personnalisation-dun-th%C3%A8me)
-- [Afficher les indications d'un template](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#8afficher-les-indications-de-templates)
-- [Ajouter une extension existante](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#9ajouter-une-extension-existante)
-- [Créer un module personnalisé](https://github.com/christophe-bernard-tribe/magento-module/new/main?readme=1#10cr%C3%A9er-un-module-personnalis%C3%A9)
+- [Configuration Système](#_Toc68005382)
+- [Elastic Search](#_Toc68005383)
+- [Installation Magento](#_Toc68005384)
+- [Test de l'installation](#_Toc68005385)
+- [Changement de mode](#_Toc680053826)
+- [Installation d'un thème](#_Toc68005387)
+- [Personnalisation d'un thème](#_Toc68005388)
+- [Afficher les indications d'un template](#_Toc68005389)
+- [Ajouter une extension existante](#_Toc68005310)
+- [Créer un module personnalisé](#_Toc68005311)
 
 **Adaptation du tutoriel en ligne :**
 [https://digitalstartup.co.uk/t/how-to-install-magento-2-4-and-build-a-web-server/1607](https://digitalstartup.co.uk/t/how-to-install-magento-2-4-and-build-a-web-server/1607)
 
-## 1.Configuration Système
+##<a id="_Toc68005382"></a>1. Configuration Système
 
 ### a.Installation/Configuration Firewall
 
@@ -165,7 +165,7 @@ Rechercher avec `Ctrl + W` :
 
 `sudo systemctl restart postfix`
 
-## 2.Installation/Configuration Elasticsearch
+##<a id="_Toc68005383"></a>2. Installation/Configuration Elasticsearch
 
 **Installation des packages Java :**
 
@@ -202,7 +202,7 @@ sudo /bin/systemctl daemon-reload
 
 `curl -X GET "localhost:9200/"`
 
-## 3.Installation Magento 2.4
+##<a id="_Toc68005384"></a>3. Installation Magento 2.4
 
 ### a.Création d’un utilisateur
 
@@ -298,7 +298,7 @@ Rechercher avec `Ctrl + W`
 
 `bin/magento cron:install`
 
-## 4.Test de l’installation
+##<a id="_Toc68005385"></a>4. Test de l’installation
 
 **Boutique :**
 
@@ -315,7 +315,7 @@ bin/magento module:disable Magento_TwoFactorAuth
 bin/magento cache:flush
 ```
 
-## 5.Changer de mode
+##<a id="_Toc68005386"></a>5. Changer de mode
 
 - Vérifier le mode actif : `bin/magento deploy:mode:show`
 
@@ -325,7 +325,7 @@ bin/magento cache:flush
 
 - Nettoyer le cache après chaque changement de mode : `bin/magento cache:clean`
 
-## 6.Installation d’un thème
+##<a id="_Toc68005387"></a>6. Installation d’un thème
 
 - Télécharger un thème (ex : [https://www.hiddentechies.com/bizkick-responsive-theme-magento-2.html](https://www.hiddentechies.com/bizkick-responsive-theme-magento-2.html))
 - Copier et extraire l’archive (dossiers `/app` et `/pub`) dans le dossier `<Magento root dir>/` :
@@ -344,7 +344,7 @@ bin/magento setup:static-content:deploy
 - Dans la section **Applied Theme**, choisir le thème dans la liste déroulante
 - Rafraîchir le cache
 
-## 7.Personnalisation d’un thème
+##<a id="_Toc68005388"></a>7. Personnalisation d’un thème
 
 - Structure d’un thème :
 
@@ -354,7 +354,7 @@ bin/magento setup:static-content:deploy
 
 [https://magecomp.com/blog/how-to-customize-themes-styles-in-magento/](https://magecomp.com/blog/how-to-customize-themes-styles-in-magento/)
 
-## 8.Afficher les indications de templates
+##<a id="_Toc68005389"></a>8. Afficher les indications de templates
 
 - Basculer en mode Developper
 - Exécuter les commandes :
@@ -366,7 +366,7 @@ bin/magento cache:clean config full_page
 
 - Ajouter le paramètre ?templatehints=magento dans l’url pour afficher les indications
 
-## 9.Ajouter une extension existante
+##<a id="_Toc68005310"></a>9. Ajouter une extension existante
 
 Le gestionnaire d’extension n’est plus disponible depuis la version 2.4 de Magento, toutes les extensions doivent être installées en ligne de commande.
 
@@ -422,7 +422,7 @@ On retrouve l’extension dans le panneau d’administration, onglet Content :
 
 ![image](https://user-images.githubusercontent.com/45293401/113010529-33240100-9179-11eb-94e1-79daaa99b4ba.png)
 
-## 10.Créer un module personnalisé
+##<a id="_Toc68005311"></a>10. Créer un module personnalisé
 
 Sources :
 
@@ -640,8 +640,58 @@ Dans ce fichier, nous définissons le **Block** et le **Template** de la page
 
 ### k.Création d’un Block
 
+Création d’un fichier **Param.php** dans le dossier (respecter la casse) : `magento/app/code/Ubista/Ubista/Block/Param.php`.
+
+Le block permet de récupérer les données dans la partie phtml (front & back) en appelant **$block->mafonction()**.
+
+[https://github.com/christophe-bernard-tribe/magento-module/blob/main/Block/Param.php](https://github.com/christophe-bernard-tribe/magento-module/blob/main/Block/Param.php)
+
 ### l.Création d’un Template
+
+- **Partie Admin :**
+
+Création d’un fichier **tribe.phtml** dans le dossier (respecter la casse) : `magento/app/code/Ubista/Ubista/view/adminhtml/templates/tribe.phtml`.
+
+Ici, on récupère en BDD la valeur du paramètre créé afin d’afficher la valeur dans un switch, formulaire avec action sur la route **ubista/tribe/post** (controller Post, fonction execute()).
+
+[https://github.com/christophe-bernard-tribe/magento-module/blob/main/view/adminhtml/templates/tribe.phtml](https://github.com/christophe-bernard-tribe/magento-module/blob/main/view/adminhtml/templates/tribe.phtml)
+
+- **Partie FrontEnd :**
+
+Création d’un fichier **attribute.phtml** dans le dossier (respecter la casse) : `magento/app/code/Ubista/Ubista/view/frontend/templates/attribute.phtml`.
+
+Ici, on vérifie si le param sur la partie Admin est actif et en fonction de la catégorie du produit, on affiche ou non une Icone.
+
+[https://github.com/christophe-bernard-tribe/magento-module/blob/main/view/frontend/templates/attribute.phtml](https://github.com/christophe-bernard-tribe/magento-module/blob/main/view/frontend/templates/attribute.phtml)
 
 ### m.Modification de l’icône du menu admin créé
 
+Création d’une police (font) personnalisée à partir d’images svg sur le site [https://glyphter.com/](https://glyphter.com/).
+
+Télécharger l’archive et extraire dans le dossier : `magento/app/code/Ubista/Ubista/view/adminhtml/web/fonts`. Les 4 fichiers correspondant à la police (**_.eot, .svg, .ttf, .woff_**) en prennant soin de les renommer du nom de la police afin de les faire correspondre au fichier **css**.
+
+Dans le dossier `magento/app/code/Ubista/Ubista/view/adminhtml/web/css/source`, créer un fichier **\_module.less** et y copier le contenu du fichier **css** de la police. Ajouter le style suivant ou **.item-ubistamenu** correspondant à l’ID du menu crée dans le fichier `magento/app/code/Ubista/Ubista/etc/adminhtml/menu.xml`
+
+[https://github.com/christophe-bernard-tribe/magento-module/blob/main/view/adminhtml/web/css/source/\_module.less](https://github.com/christophe-bernard-tribe/magento-module/blob/main/view/adminhtml/web/css/source/_module.less)
+
+Source : [https://store.magenest.com/blog/set-custom-icon-menu-backend-magento-2/](https://store.magenest.com/blog/set-custom-icon-menu-backend-magento-2/)
+
+**Pour prendre en compte les modifications effectuées sur le module, exécuter les commandes pour le mettre à jour :**
+
+`rm -rf var/view_preprocessed/* pub/static/*` **_(uniquement pour les modifications des fichiers compilés CSS, JS, …)_**
+
+```bash
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+php bin/magento cache:flush
+```
+
 ### n.Résultat visuel
+
+- **Partie Admin :**
+
+![image](https://user-images.githubusercontent.com/45293401/113100617-eb928900-91fb-11eb-8ad7-98a4b28bf3be.png)
+
+- **Partie FrontEnd :**
+
+![image](https://user-images.githubusercontent.com/45293401/113100677-fd742c00-91fb-11eb-8a66-4990b0efc07a.png)
